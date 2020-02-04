@@ -22,3 +22,5 @@
     npm install
     open index.html
     ```
+
+Created by Valeriia Hutsuliak, Naveed Ganjani, and Sarah Laloggia for Flatiron School's Software Engineering Bootcamp, Module 3 (Rails) Project 2019
