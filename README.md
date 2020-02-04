@@ -1,10 +1,24 @@
 # Triviathon
-- Index page renders frame & sidebars
-- User login renders in center div
-- Backend finds or creates user, creates session 
-- Once 'logged in' render 'game'
-    - Category select
-    - Carousel frame
-- Fetch questions, interpolate category id from user selection
-- Render questions as carousel items, with answer form for user input
-- 
+## Run a Trivia Marathon!
+- Log in with your username to create an account or continue playing.
+- Choose a category to start your race. Default length is Half-Marathon (13 questions)
+- Answer questions of varying difficulty to earn points:
+    - Easy = 1 point 
+    - Medium = 3 points
+    - Hard = 5 points
+- Submit your score and rise up the leaderboard!
+
+## Set up
+    Navigate to triviathon-backend directory and run the following:
+    ```
+    bundle install
+    rails db:migrate
+    rails db:seed
+    rails s
+    ``` 
+
+    Navigate to triviathon-frontend directory and run the following:
+    ```
+    npm install
+    open index.html
+    ```

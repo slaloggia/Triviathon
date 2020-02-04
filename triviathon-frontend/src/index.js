@@ -54,17 +54,18 @@ function grabUserData(e) {
 
 function renderUserInfo(user) {
   const infosec = document.querySelector('.user-info')
-  infosec.innerHTML = `<span data-id= ${user.id}>
-                        <p>Name: ${user.username}</p>
-                        <label>Total Score:<p id="current-score">${user.score}</p></label><br>
-                        <label>Total Attempts:<p>${user.answers.length}</p></label>
-                        <br>
-                        <button id="exit-bttn"> Log Out </button>
-                        </span>
-                        `
+  infosec.innerHTML = `
+    <span data-id= ${user.id}>
+    <p>Name: ${user.username}</p>
+    <label>Total Score:<p id="current-score">${user.score}</p></label><br>
+    <label>Total Attempts:<p>${user.answers.length}</p></label>
+    <br>
+    <button id="exit-bttn"> Log Out </button>
+    </span>
+  `
 
-                        let exitForm = document.getElementById('exit-bttn')
-                        exitForm.addEventListener('click', () => logOut());
+  let exitForm = document.getElementById('exit-bttn')
+  exitForm.addEventListener('click', () => logOut());
 }
 
 function logOut(){
@@ -129,10 +130,10 @@ function renderQuestion(questionObj) {
   inner.appendChild(slide)
 
   
-  slide.addEventListener('click',() => handelSelection(questionObj))
+  slide.addEventListener('click',() => handleSelection(questionObj))
 
   
-  function handelSelection(questionObj){
+  function handleSelection(questionObj){
     const score = document.querySelector('#round-score')
     const clickEl = event.target
     const inputs = slide.getElementsByClassName('answer-btn')
@@ -227,7 +228,7 @@ function addQuestions(allQuestions) {
 }
   
 function getQuestions(categoryID) {
-  fetch(`https://opentdb.com/api.php?amount=5&category=${categoryID}&type=multiple`)
+  fetch(`https://opentdb.com/api.php?amount=13&category=${categoryID}&type=multiple`)
   .then(resp => resp.json())
   .then(allQuestions => addQuestions(allQuestions))
   .catch(err => console.log(err.message))
@@ -246,8 +247,12 @@ function readyMessage() {
   let carouselActive = document.querySelector('.active')
   carouselActive.innerHTML = ''
   startMsg = document.createElement('h3')
-  startMsg.innerHTML = `<br><br>You have 10 seconds to answer each question
-                        GET READY...<br>GET SET...<br>GO!!!`
+  startMsg.innerHTML = `
+    <br><br>
+    You have 10 seconds to answer each question
+    GET READY...<br>GET SET...
+    <br>
+    GO!!!`
   carouselActive.append(startMsg)
 }
 
@@ -290,6 +295,7 @@ function updateScore(userId) {
   fetch(`${USERS_URL}/${userId}`, reqObj)
   .then(resp => resp.json())
   .then(user => renderUserInfo(user))
+  .then(() => getAllUsers())
 }
 
 // restart game functions
