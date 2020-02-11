@@ -228,7 +228,7 @@ function addQuestions(allQuestions) {
 }
   
 function getQuestions(categoryID) {
-  fetch(`https://opentdb.com/api.php?amount=13&category=${categoryID}&type=multiple`)
+  fetch(`https://opentdb.com/api.php?amount=6&category=${categoryID}&type=multiple`)
   .then(resp => resp.json())
   .then(allQuestions => addQuestions(allQuestions))
   .catch(err => console.log(err.message))
