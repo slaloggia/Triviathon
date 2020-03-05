@@ -8,6 +8,8 @@
     - Hard = 5 points
 - Submit your score and rise up the leaderboard!
 
+![image](https://user-images.githubusercontent.com/54509406/76034600-fb5e7180-5f04-11ea-858d-32b3ff7f3dcd.png)
+
 ## Set up
 Navigate to triviathon-backend directory and run the following:
 ```
