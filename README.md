@@ -30,4 +30,9 @@ Built with Javascript and styled with [Bootstrap](https://getbootstrap.com/)
 
 Questions fetched from [Open Trivia Database](https://opentdb.com/)
 
+## Future Build Features
+- User authentication with secure passwords
+- Answers render in collapsible component
+- Option for user to view all questions answered
+
 Created by Valeriia Hutsuliak, Naveed Ganjani, and Sarah Laloggia for Flatiron School's Software Engineering Bootcamp, Module 3 (Rails) Project 2019
